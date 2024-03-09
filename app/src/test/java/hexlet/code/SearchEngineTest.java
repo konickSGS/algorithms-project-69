@@ -34,7 +34,9 @@ class SearchEngineTest {
 
         return Stream.of(
                 Arguments.of(docs, "shoot", List.of("doc1", "doc2")),
-                Arguments.of(new ArrayList<Map<String, String>>(), "shoot", List.of())
+                Arguments.of(new ArrayList<Map<String, String>>(), "shoot", List.of()),
+                Arguments.of(docs, "pint", List.of("doc1")),
+                Arguments.of(docs, "pint!", List.of("doc1"))
         );
     }
 }

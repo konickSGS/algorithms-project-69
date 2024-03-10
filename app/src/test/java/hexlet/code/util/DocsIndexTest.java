@@ -21,19 +21,30 @@ public class DocsIndexTest {
     }
 
     private static Stream<Arguments> provideMakeIndex() {
-        List<Map<String, String>> docs = List.of(
-                Map.of("id", "doc1", "text", "some text"),
-                Map.of("id", "doc2", "text", "some text too")
-        );
-
-        Map<String, List<String>> index = Map.of(
-                "some", List.of("doc1", "doc2"),
-                "text", List.of("doc1", "doc2"),
-                "too", List.of("doc2")
-        );
-
         return Stream.of(
-                Arguments.of(docs, index)
+                Arguments.of(
+                        List.of(
+                                Map.of("id", "doc1", "text", "some text"),
+                                Map.of("id", "doc2", "text", "some text too")
+                        ),
+                        Map.of(
+                                "some", List.of("doc1", "doc2"),
+                                "text", List.of("doc1", "doc2"),
+                                "too", List.of("doc2")
+                        )
+                ),
+                Arguments.of(
+                        List.of(
+                                Map.of("id", "doc1", "text", "some some some some"),
+                                Map.of("id", "doc2", "text", "some some some"),
+                                Map.of("id", "doc3", "text", "some some"),
+                                Map.of("id", "doc4", "text", "some")
+                        ),
+                        Map.of(
+                                "some", List.of("doc1", "doc2", "doc3", "doc4")
+                        )
+                ),
+                Arguments.of(List.of(), Map.of())
         );
     }
 }

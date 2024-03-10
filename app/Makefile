@@ -1,5 +1,5 @@
 lint:
-	./gradlew checkstyleMain checkstyleTest
+	@./gradlew checkstyleMain checkstyleTest
 
 test:
 	@./gradlew test

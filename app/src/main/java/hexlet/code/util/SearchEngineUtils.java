@@ -6,7 +6,7 @@ import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class SearchEngineUtills {
+public class SearchEngineUtils {
     /**
      * Обработчик строки: очищение от знаков препинания.
      *
@@ -14,9 +14,9 @@ public class SearchEngineUtills {
      * @return - очищенная строка
      */
     public static List<String> processText(String text) {
-        List<String> words = Arrays.stream(text.split(" ")).toList();
+        List<String> words = Arrays.stream(text.trim().split(" ")).toList();
         return words.stream()
-                .map(SearchEngineUtills::processWord)
+                .map(SearchEngineUtils::processWord)
                 .collect(Collectors.toList());
     }
 
@@ -28,7 +28,7 @@ public class SearchEngineUtills {
                 .collect(Collectors.joining());
     }
 
-    public static Pattern getWordPattern(List<String> tokens) {
+    public static Pattern getTokensPattern(List<String> tokens) {
         // \b - Промежуток между символом, совпадающим с \w и символом, не совпадающим с \w в любом порядке.
         String allTokens = tokens.stream()
                 .map(Pattern::quote)

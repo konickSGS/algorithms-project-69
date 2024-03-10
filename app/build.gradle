@@ -12,6 +12,7 @@ repositories {
 
 ext {
     versionJunit = '5.8.1'
+    versionLombok = '1.18.30'
 }
 
 dependencies {
@@ -20,6 +21,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params
     testImplementation "org.junit.jupiter:junit-jupiter-params:$versionJunit"
 
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly "org.projectlombok:lombok:$versionLombok"
+    //annotationProcessor "org.projectlombok:lombok:$versionLombok"
+    //testCompileOnly "org.projectlombok:lombok:$versionLombok"
+    //testAnnotationProcessor "org.projectlombok:$versionLombok"
 }
 
 test {

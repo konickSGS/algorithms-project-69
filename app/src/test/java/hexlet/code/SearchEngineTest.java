@@ -36,7 +36,8 @@ class SearchEngineTest {
                 Arguments.of(docs, "shoot", List.of("doc2", "doc1")),
                 Arguments.of(new ArrayList<Map<String, String>>(), "shoot", List.of()),
                 Arguments.of(docs, "pint", List.of("doc1")),
-                Arguments.of(docs, "pint!", List.of("doc1"))
+                Arguments.of(docs, "pint!", List.of("doc1")),
+                Arguments.of(docs, "shoot at me", List.of("doc2", "doc1"))
         );
     }
 }
